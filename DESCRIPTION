@@ -1,0 +1,22 @@
+Package: zstdr
+Type: Package
+Title: R bindings to zstandard compression library
+Version: 0.1.0
+Authors@R: c(
+        person("Konstantin", "Sorokin", email = "kvs@sigterm.ru", role = c("aut", "cre")),
+        person("Facebook, Inc", role = c("aut","cph"), comment = "Fast real-time compression library")
+    )
+Author: Konstantin Sorokin
+Maintainer: Konstantin Sorokin <kvs@sigterm.ru>
+Description: Zstandard is a real-time compression algorithm, providing high compression ratios. It offers a very wide
+    range of compression / speed trade-off, while being backed by a very fast decoder.
+URL: https://github.com/thekvs/zstdr
+BugReports: https://github.com/thekvs/zstdr/issues
+License: GPL (>= 2)
+LazyData: TRUE
+SystemRequirements: C++11
+Imports:
+    Rcpp (>= 0.11.0)
+LinkingTo: Rcpp
+RoxygenNote: 6.0.1
+Suggests: testthat

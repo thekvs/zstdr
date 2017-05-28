@@ -1,0 +1,7 @@
+useDynLib(zstdr)
+export(
+    zstdCompress,
+    zstdDecompress,
+    zstdMaxCLevel
+)
+importFrom(Rcpp, evalCpp)
