@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/thekvs/zstdr.svg?branch=master)](https://travis-ci.org/thekvs/zstdr)
+
 About
 -----
 
