@@ -1,6 +1,10 @@
 language: r
 cache: packages
 
+r_packages:
+        - Rcpp
+        - testthat
+
 notifications:
         email:
                 on_success: change
