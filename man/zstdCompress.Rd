@@ -2,18 +2,36 @@
 % Please edit documentation in R/zstd.R
 \name{zstdCompress}
 \alias{zstdCompress}
-\title{Compresses character or binary vector}
+\title{Zstandard comression}
 \usage{
 zstdCompress(data, level = 3)
 }
 \arguments{
-\item{data}{input data to be compressed}
+\item{data}{input data to be compressed or decomressed}
 
-\item{level}{compression level to use, default is 3}
+\item{level}{compression level to use, value between 1 and returned by \link{zstdMaxCLevel} function, default is 3}
 }
 \value{
 compressed data
 }
 \description{
-Compresses character or binary vector
+Zstandard, or zstd as short version, is a fast lossless compression algorithm, targeting real-time compression scenarios
+at zlib-level and better compression ratios.
+}
+\details{
+Compresses data using zstandard algorithm
+}
+\examples{
+# Simple example
+library(zstdr)
+data_file <- file.path(R.home(), "COPYING")
+data <- readBin(data_file, raw(), file.info(data_file)$size)
+compressed <- zstdCompress(data)
+stopifnot(identical(data, zstdDecompress(compressed)))
+}
+\references{
+\url{http://facebook.github.io/zstd/}
+}
+\seealso{
+\link{memCompress} \link{zstdDecompress} \link{zstdMaxCLevel}
 }

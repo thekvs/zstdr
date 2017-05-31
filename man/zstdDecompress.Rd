@@ -2,16 +2,31 @@
 % Please edit documentation in R/zstd.R
 \name{zstdDecompress}
 \alias{zstdDecompress}
-\title{Decopresses binary data}
+\title{Zstandard comression}
 \usage{
 zstdDecompress(data)
 }
 \arguments{
-\item{data}{compressed data to be decompressed}
+\item{data}{input data to be decomressed}
 }
 \value{
 decompressed data
 }
 \description{
-Decopresses binary data
+Zstandard, or zstd as short version, is a fast lossless compression algorithm, targeting real-time compression scenarios
+at zlib-level and better compression ratios.
+}
+\details{
+Decompresses data previously compressed with \link{zstdCompress}
+}
+\examples{
+# Simple example
+library(zstdr)
+data_file <- file.path(R.home(), "COPYING")
+data <- readBin(data_file, raw(), file.info(data_file)$size)
+compressed <- zstdCompress(data)
+stopifnot(identical(data, zstdDecompress(compressed)))
+}
+\seealso{
+\link{memCompress} \link{zstdCompress} \link{zstdMaxCLevel}
 }

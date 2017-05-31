@@ -12,3 +12,6 @@ maximum supported compression level
 \description{
 Returns maximum compression level supported by zstandard
 }
+\seealso{
+\link{memCompress} \link{zstdCompress} \link{zstdDecompress}
+}
