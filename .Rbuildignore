@@ -3,3 +3,9 @@
 .travis.yml
 .debug
 Makefile
+^src/third_party/zstd-1.2.0/.buckconfig$
+^src/third_party/zstd-1.2.0/.buckversion$
+^README\.Rmd$
+^Benchmarks-graphs-.*\.png$
+^Benchmarks.Rmd$
+^Benchmarks.md$
