@@ -7,9 +7,9 @@ Authors@R: c(
         person("Facebook, Inc", role = c("aut","cph"), comment = "Fast real-time compression library")
     )
 Maintainer: Konstantin Sorokin <kvs@sigterm.ru>
-Description: Provides R bindings to the 'Zstandard' compression library. Zstandard is a real-time compression algorithm,
-    providing high compression ratios. It offers a very wide range of compression / speed trade-off, while being backed by
-    a very fast decoder.
+Description: Provides R bindings to the 'Zstandard' compression library.
+    'Zstandard' is a real-time compression algorithm, providing high compression ratios.
+    It offers a very wide range of compression / speed trade-off, while being backed by a very fast decoder.
 URL: https://github.com/thekvs/zstdr
 BugReports: https://github.com/thekvs/zstdr/issues
 License: GPL (>= 2)
