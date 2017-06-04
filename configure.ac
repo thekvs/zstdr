@@ -15,7 +15,7 @@ if test -z "${R_HOME}"; then
     AC_MSG_ERROR([Could not determine R_HOME.])
 fi
 
-which cmake >/dev/null || AC_MSG_ERROR([Could not find CMake.])
+which cmake >/dev/null || AC_MSG_ERROR([Could not find cmake.])
 
 ## Get R compilers and flags
 ZSTDR_CC=$("${R_HOME}/bin/R" CMD config CC)
@@ -28,7 +28,7 @@ ZSTDR_CXXCPP=$("${R_HOME}/bin/R" CMD config CXXCPP)
 
 AC_MSG_NOTICE([Starting to build zstd library])
 
-build_dir=`mktemp -d -t zstdr_XXXXXX`
+build_dir=`mktemp -d -t zstdr_build_XXXXXX`
 zstd_version="1.2.0"
 
 $(cd "src/third_party/zstd-$zstd_version"; \

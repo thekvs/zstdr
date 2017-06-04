@@ -2694,7 +2694,7 @@ if test -z "${R_HOME}"; then
     as_fn_error $? "Could not determine R_HOME." "$LINENO" 5
 fi
 
-which cmake >/dev/null || as_fn_error $? "Could not find CMake." "$LINENO" 5
+which cmake >/dev/null || as_fn_error $? "Could not find cmake." "$LINENO" 5
 
 ## Get R compilers and flags
 ZSTDR_CC=$("${R_HOME}/bin/R" CMD config CC)
@@ -2708,7 +2708,7 @@ ZSTDR_CXXCPP=$("${R_HOME}/bin/R" CMD config CXXCPP)
 { $as_echo "$as_me:${as_lineno-$LINENO}: Starting to build zstd library" >&5
 $as_echo "$as_me: Starting to build zstd library" >&6;}
 
-build_dir=`mktemp -d -t zstdr_XXXXXX`
+build_dir=`mktemp -d -t zstdr_build_XXXXXX`
 zstd_version="1.2.0"
 
 $(cd "src/third_party/zstd-$zstd_version"; \
