@@ -15,7 +15,10 @@ if test -z "${R_HOME}"; then
     AC_MSG_ERROR([Could not determine R_HOME.])
 fi
 
-which cmake >/dev/null || AC_MSG_ERROR([Could not find cmake.])
+AC_CHECK_PROG(CMAKE_CHECK, cmake, yes)
+if test x"$CMAKE_CHECK" != x"yes" ; then
+    AC_MSG_ERROR([Could not find cmake.])
+fi
 
 ## Get R compilers and flags
 ZSTDR_CC=$("${R_HOME}/bin/R" CMD config CC)

@@ -586,6 +586,7 @@ LIBOBJS
 PKG_LIBS
 PKG_CXXFLAGS
 PKG_CFLAGS
+CMAKE_CHECK
 CXXCPP
 OBJEXT
 EXEEXT
@@ -2694,7 +2695,46 @@ if test -z "${R_HOME}"; then
     as_fn_error $? "Could not determine R_HOME." "$LINENO" 5
 fi
 
-which cmake >/dev/null || as_fn_error $? "Could not find cmake." "$LINENO" 5
+# Extract the first word of "cmake", so it can be a program name with args.
+set dummy cmake; ac_word=$2
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+$as_echo_n "checking for $ac_word... " >&6; }
+if ${ac_cv_prog_CMAKE_CHECK+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  if test -n "$CMAKE_CHECK"; then
+  ac_cv_prog_CMAKE_CHECK="$CMAKE_CHECK" # Let the user override the test.
+else
+as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+for as_dir in $PATH
+do
+  IFS=$as_save_IFS
+  test -z "$as_dir" && as_dir=.
+    for ac_exec_ext in '' $ac_executable_extensions; do
+  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+    ac_cv_prog_CMAKE_CHECK="yes"
+    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+    break 2
+  fi
+done
+  done
+IFS=$as_save_IFS
+
+fi
+fi
+CMAKE_CHECK=$ac_cv_prog_CMAKE_CHECK
+if test -n "$CMAKE_CHECK"; then
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $CMAKE_CHECK" >&5
+$as_echo "$CMAKE_CHECK" >&6; }
+else
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+fi
+
+
+if test x"$CMAKE_CHECK" != x"yes" ; then
+    as_fn_error $? "Could not find cmake." "$LINENO" 5
+fi
 
 ## Get R compilers and flags
 ZSTDR_CC=$("${R_HOME}/bin/R" CMD config CC)
