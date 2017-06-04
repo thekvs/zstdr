@@ -13,6 +13,7 @@ matrix:
         include:
                 - os: linux
                   dist: trusty
+                  latex: false
                 - os: osx
                   osx_image: xcode8.3
                   latex: false
