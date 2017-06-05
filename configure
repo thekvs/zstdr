@@ -2748,20 +2748,23 @@ ZSTDR_CXXCPP=$("${R_HOME}/bin/R" CMD config CXXCPP)
 { $as_echo "$as_me:${as_lineno-$LINENO}: Starting to build zstd library" >&5
 $as_echo "$as_me: Starting to build zstd library" >&6;}
 
-build_dir=`mktemp -d -t zstdr_build_XXXXXX`
+base_dir=$(pwd)
+build_dir=`mktemp -d -t zstd_build_XXXXXX`
 zstd_version="1.2.0"
 
 $(cd "src/third_party/zstd-$zstd_version"; \
   	src_dir="$(pwd)"
 	cd $build_dir
-	cmake "$src_dir/build/cmake/" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$build_dir/install" -DCMAKE_C_FLAGS="${ZSTDR_CFLAGS} -fPIC" -DCMAKE_CXX_FLAGS="${ZSTDR_CXXFLAGS} -fPIC" -DZSTD_BUILD_STATIC=ON; \
-	make > /dev/null 2>&1;)
+	cmake "$src_dir/build/cmake/" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$base_dir/zstd-$zstd_version" -DCMAKE_C_FLAGS="${ZSTDR_CFLAGS} -fPIC" -DCMAKE_CXX_FLAGS="${ZSTDR_CXXFLAGS} -fPIC" -DZSTD_BUILD_STATIC=ON; \
+	make > /dev/null 2>&1; \
+	make install; \
+	cd /tmp/ && rm -rf $build_dir;)
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: Finished building zstd library" >&5
 $as_echo "$as_me: Finished building zstd library" >&6;}
 
-ZSTD_LIBS="$build_dir/lib/libzstd.a"
-ZSTD_INCL="-I$(pwd)/src/third_party/zstd-$zstd_version/lib"
+ZSTD_LIBS="$base_dir/zstd-$zstd_version/lib/libzstd.a"
+ZSTD_INCL="-I$base_dir/zstd-$zstd_version/include"
 
 zstd_cflags="${ZSTD_INCL}"
 zstd_libs="${ZSTD_LIBS}"
