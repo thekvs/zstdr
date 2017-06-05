@@ -3,10 +3,6 @@ services:
         - docker
 
 language: r
-r:
-        - oldrel
-        - release
-
 cache: packages
 
 r_packages:
