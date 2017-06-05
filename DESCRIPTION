@@ -1,7 +1,7 @@
 Package: zstdr
 Type: Package
 Title: R Bindings to Zstandard Compression Library
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
         person("Konstantin", "Sorokin", email = "kvs@sigterm.ru", role = c("aut", "cre")),
         person("Facebook, Inc", role = c("aut","cph"), comment = "Fast real-time compression library")

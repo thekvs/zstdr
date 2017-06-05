@@ -2,7 +2,7 @@
 AC_PREREQ(2.61)
 
 # Process this file with autoconf to produce a configure script.
-AC_INIT([zstdr], [0.1.0])
+AC_INIT([zstdr], [0.1.1])
 
 # We are using C++
 AC_LANG(C++)
