@@ -14,7 +14,13 @@ See [benchmarks](Benchmarks.md) for comparison with other compression algorithms
 Installation
 ------------
 
-For the moment you can only install from GitHub:
+To install from CRAN:
+
+``` r
+install.packages('zstdr')
+```
+
+To install development version from GitHub:
 
 ``` r
 devtools::install_github("thekvs/zstdr")
