@@ -6,6 +6,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 [![Build Status](https://travis-ci.org/thekvs/zstdr.svg?branch=master)](https://travis-ci.org/thekvs/zstdr)
+[![CRAN Status](http://www.r-pkg.org/badges/version/zstdr)](http://cran.r-project.org/package=zstdr)
 
 ## About
 This package provides simple R bindings to the [Zstandard compression library](http://facebook.github.io/zstd/).

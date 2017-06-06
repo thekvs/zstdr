@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/thekvs/zstdr.svg?branch=master)](https://travis-ci.org/thekvs/zstdr)
+[![Build Status](https://travis-ci.org/thekvs/zstdr.svg?branch=master)](https://travis-ci.org/thekvs/zstdr) [![CRAN Status](http://www.r-pkg.org/badges/version/zstdr)](http://cran.r-project.org/package=zstdr)
 
 About
 -----
