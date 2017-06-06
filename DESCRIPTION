@@ -1,6 +1,6 @@
 Package: zstdr
 Type: Package
-Title: R Bindings to Zstandard Compression Library
+Title: R Bindings to the 'Zstandard' Compression Library
 Version: 0.1.1
 Authors@R: c(
         person("Konstantin", "Sorokin", email = "kvs@sigterm.ru", role = c("aut", "cre")),
